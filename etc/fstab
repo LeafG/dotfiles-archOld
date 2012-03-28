@@ -1,0 +1,18 @@
+# 
+# /etc/fstab: static file system information
+#
+# <file system>	<dir>	<type>	<options>	<dump>	<pass>
+tmpfs		/tmp	tmpfs	nodev,nosuid	0	0
+#LABEL=boot /boot ext2 defaults 0 1
+#LABEL=home /home ext4 defaults 0 1
+#LABEL=root / ext4 defaults 0 1
+#LABEL=swap swap swap defaults 0 0
+#LABEL=boot /boot ext2 defaults 0 1
+#LABEL=home /home ext4 defaults 0 1
+#LABEL=root / ext4 defaults 0 1
+#LABEL=swap swap swap defaults 0 0
+LABEL=boot /boot ext2 defaults 0 1
+LABEL=home /home ext4 defaults 0 1
+LABEL=root / ext4 defaults 0 1
+LABEL=swap swap swap defaults 0 0
+Upload /media/sf_Upload vboxsf defaults  0  0
