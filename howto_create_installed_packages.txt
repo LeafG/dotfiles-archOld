@@ -6,9 +6,6 @@
 # pacman -Qqm > local.lst
 ## end
 
-pacman -Qqe | grep -vx "$(pacman -Qqg base)" | grep -vx "$(pacman -Qqm)" > ab_main.lst
-pacman -Qqm > ab_local.lst
-
 pacman -Qqe | grep -vx "$(pacman -Qqg base)" | grep -vx "$(pacman -Qqm)" > a_main.lst
 pacman -Qqm > a_local.lst
 ------------------------------
@@ -19,16 +16,3 @@ install local and AUR packages:
 yaourt --noconfirm -S $(cat $arch_local.txt | grep -vx "$(pacman -Qqm)")
 
 ----------------------------
-pacman -Qe | awk '{print $1}' > package_list.txt
-
-or
-
-pacman -Qe > pacman.txt
-
- for x in $(cat arch-my-install.txt); do pacman -S $x; done
-
- .or...
-
-pacman -S `cat arch-my-install.txt`
-#This will also work, but Pacman will exit if you have a package
-#installed that is not in the repositories.
