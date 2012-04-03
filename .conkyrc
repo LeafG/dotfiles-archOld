@@ -117,7 +117,7 @@ ${font sans-serif:normal:size=8}Alt+F2$alignr Run Dialog
 Alt+F3$alignr Dmenu
 Super+space$alignr Main Menu
 Super+t$alignr Terminal
-Ctrl+t$alignr  ROXTerm
+Alt+t$alignr   xTerm
 Super+f$alignr File Manager
 Super+s$alignr SpaceFM
 Super+h$alignr Task Manager

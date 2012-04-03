@@ -311,7 +311,7 @@
     </keybind>
     <keybind key="W-w">
       <action name="Execute">
-        <command>firefox-aurora</command>
+        <command>seamonkey </command>
         <startupnotify>
           <enabled>yes</enabled>
           <name>Minefield Web Browser</name>
@@ -329,16 +329,12 @@
     </keybind>
     <keybind key="W-t">
       <action name="Execute">
-        <command>xterm</command>
-        <startupnotify>
-          <enabled>yes</enabled>
-          <name>urxvt</name>
-        </startupnotify>
+        <command>roxterm</command>
       </action>
     </keybind>
-    <keybind key="C-t">
+    <keybind key="a-t">
       <action name="Execute">
-        <command>roxterm</command>
+        <command>xterm</command>
       </action>
     </keybind>
     <keybind key="W-q">

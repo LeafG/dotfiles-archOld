@@ -13,6 +13,7 @@ gimp
 git
 gmrun
 gnome-icon-theme
+gtk-aurora-engine
 htop
 leafpad
 libtool
@@ -32,6 +33,7 @@ pkg-config
 pyxdg
 reflector
 roxterm
+seamonkey
 slim
 slim-themes
 strace

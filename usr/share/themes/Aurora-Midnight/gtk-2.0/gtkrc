@@ -60,6 +60,7 @@ style "theme-default"
   #set to the same as roundness, used for better hotspot selection of tabs
   GtkNotebook::tab-curvature = 3
   GtkNotebook::tab-overlap = 4
+  GtkNotebook::tab_border = 2
 
   GtkMenuItem::arrow-spacing = 10
   #Spacing between edge with indicator and text

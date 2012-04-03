@@ -134,11 +134,12 @@ launcher_margin = 1 1
 launcher_padding = 5 1 5
 launcher_background_id = 0
 launcher_icon_size = 16
-launcher_item_app = /usr/share/applications/icechat9.desktop
-launcher_item_app = /usr/share/applications/editplus.desktop
+#launcher_item_app = /usr/share/applications/icechat9.desktop
+#launcher_item_app = /usr/share/applications/editplus.desktop
+#launcher_item_app = /usr/share/applications/poppeeper.desktop
 launcher_item_app = /usr/share/applications/firefox.desktop
+launcher_item_app = /usr/share/applications/seamonkey.desktop
 launcher_item_app = /usr/share/applications/htop.desktop
-launcher_item_app = /usr/share/applications/poppeeper.desktop
 launcher_item_app = /usr/share/applications/foobar2000.desktop
 
 # End of config
