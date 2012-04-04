@@ -3,7 +3,7 @@
  ###  Begin Window Settings  ##################################################
  # Create own window instead of using desktop (required in nautilus)
 own_window yes
-own_window_type override
+own_window_type desktop
 own_window_transparent yes
 own_window_hints below,sticky,skip_taskbar,skip_pager
 # own_window_colour brown
@@ -27,14 +27,15 @@ gap_y 220    ## up & down
 
 alignment top_right
  ####################################################  End Window Settings  ###
+
  ###  Font Settings  ##########################################################
  # Use Xft (anti-aliased font and stuff) 
 use_xft yes
 xftfont monospace:size=8
  # Alpha of Xft font. Must be a value at or between 1 and 0 ###
-xftalpha 0
+xftalpha 1
  # Force UTF8? requires XFT ###
-override_utf8_locale yes
+override_utf8_locale no
 
 draw_shades no
 draw_outline no
@@ -58,7 +59,7 @@ color6 00BFFF #DeepSkyBlue
 color7 00FFFF #Cyan 48D1CC #MediumTurquoise
 color8 FFFF00 #Yellow
 color9 FF0000 #Red
-color10 000000 #Black
+#color10 000000 #Black
  #####################################################  End Color Settings  ###
  ###  Borders Section  ########################################################
 draw_borders no
@@ -79,7 +80,7 @@ double_buffer yes
  # Adds spaces around certain objects to stop them
  # from moving other things around.
  # only works with mono fonts
-use_spacer right
+#use_spacer right
  # Arguments are left, right, and none (default)
 
  # Size of the standard text buffer (default is 256 bytes).
@@ -107,6 +108,6 @@ lua_load ~/conky/clock.lua
 lua_draw_hook_post draw_clock
 
 TEXT
-${image /media/sf_Upload/conky-clock/pics/lars2.png -p -0,0 -s 220x220}
-#${image /media/sf_Upload/conky-clock/pics/Topaz_Circled2.png -p -0,0 -s 220x220}
+${image /usr/share/icons/png/lars2.png -p -0,0 -s 220x220}
+#${image /usr/share/icons/png/Topaz_Circled2.png -p -0,0 -s 220x220}
 

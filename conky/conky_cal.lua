@@ -53,7 +53,7 @@ function conky_cal()
    if first_day < 0 then first_day = first_day + 7 end
 
    -- Compute what day it was the first weekend date of the month
-   first_weekend = (7 - first_day + 1) % 7
+   first_weekend = (7 - first_day) % 7
 
    -- Format and print header
    header = Month[month] .. " " .. year

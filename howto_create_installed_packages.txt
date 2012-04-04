@@ -9,6 +9,8 @@
 pacman -Qqe | grep -vx "$(pacman -Qqg base)" | grep -vx "$(pacman -Qqm)" > a_main.lst
 pacman -Qqm > a_local.lst
 ------------------------------
+https://bbs.archlinux.org/viewtopic.php?id=117701
+
 install main packages:
 sudo pacman -S --needed $(cat $arch_main.txt)
 

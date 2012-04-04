@@ -23,9 +23,11 @@ make
 nitrogen
 notification-daemon
 obconf
+obkey-git
 oblogout
 obmenu
 openbox
+openbox-menu
 openbox-themes
 openssh
 patch
@@ -40,6 +42,7 @@ strace
 sudo
 thunar
 thunar-volman
+tint2-svn
 ttf-dejavu
 virtualbox-archlinux-additions
 virtualbox-archlinux-modules
@@ -52,3 +55,4 @@ xorg-utils
 xorg-xclock
 xorg-xinit
 xterm
+yaourt

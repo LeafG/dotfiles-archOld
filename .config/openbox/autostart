@@ -15,4 +15,4 @@ nitrogen --restore &
 #conky -c ~/conky/.conkyrc_sys_info;
 conky -q &
 conky -c ~/conky/.conkyrc_calendar;
-conky -c ~/conky/.conkyrc_analog1;
+#conky -c ~/conky/.conkyrc_analog1;
