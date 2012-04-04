@@ -12,9 +12,13 @@ pacman -Qqm > a_local.lst
 https://bbs.archlinux.org/viewtopic.php?id=117701
 
 install main packages:
-sudo pacman -S --needed $(cat $arch_main.txt)
+sudo pacman -S --needed $(cat filename)
 
 install local and AUR packages:
 yaourt --noconfirm -S $(cat $arch_local.txt | grep -vx "$(pacman -Qqm)")
+
+
+sudo pacman -S --needed $(cat a_main.lst)
+yaourt --noconfirm -S $(cat a_local.lst | grep -vx "$(pacman -Qqm)")
 
 ----------------------------

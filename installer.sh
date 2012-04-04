@@ -120,6 +120,7 @@ echo "${txtbld}Backing up and copying user configs${txtrst}"
       cp -p ${my_home}${dotfiles}.xinitrc ${my_home}.xinitrc
       chmod +x /home/leaf/.xinitrc
       cp -rp ${my_home}${dotfiles}.config ${my_home}.config
+      chmod +x /home/leaf/.config/openbox/pipemenus/*.sh
       cp -rp ${my_home}${dotfiles}/conky ${my_home}/conky
 #      cp -r ${my_home}${dotfiles}awesome ${my_home}.config
 #      cp -r ${my_home}${dotfiles}.fonts ${my_home}.fonts
@@ -138,6 +139,7 @@ cp -p ${my_home}${dotfiles}.Xresources ${my_home}.Xresources
 cp -p ${my_home}${dotfiles}.conkyrc ${my_home}.conkyrc
 cp -p ${my_home}${dotfiles}.xinitrc ${my_home}.xinitrc
 cp -rp ${my_home}${dotfiles}.config/. ${my_home}.config/.
+chmod +x /home/leaf/.config/openbox/pipemenus/*.sh
 cp -rp ${my_home}${dotfiles}/conky ${my_home}/conky
 cp -rp ${my_home}${dotfiles}awesome ${my_home}.config
 cp -rp ${my_home}${dotfiles}.fonts ${my_home}.fonts
@@ -157,6 +159,7 @@ echo "${txtbld}Backing up and copying root configs${txtrst}"
       sudo mv /etc/pacman.conf /etc/pacman.conf.bak
       sudo cp -p ${my_home}${dotfiles}etc/pacman.conf /etc/pacman.conf
       sudo cp -p ${my_home}${dotfiles}etc/sudoers.d/g_wheel /etc/sudoers.d/g_wheel
+      sudo chmod 440 /etc/sudoers.d/g_wheel
       sudo mv /etc/slim.conf /etc/slim.conf.bak
       sudo cp -p ${my_home}${dotfiles}etc/slim.conf /etc/slim.conf
       sudo mv /etc/xdg/menus /etc/xdg/menus.bak
@@ -172,6 +175,7 @@ sudo cp -p ${my_home}${dotfiles}etc/rc.conf /etc/rc.conf
 sudo mv /etc/pacman.conf /etc/pacman.conf.bak
 sudo cp -p ${my_home}${dotfiles}etc/pacman.conf /etc/pacman.conf
 sudo cp -p ${my_home}${dotfiles}etc/sudoers.d/g_wheel /etc/sudoers.d/g_wheel
+sudo chmod 440 /etc/sudoers.d/g_wheel
 sudo mv /etc/slim.conf /etc/slim.conf.bak
 sudo cp -p ${my_home}${dotfiles}etc/slim.conf /etc/slim.conf
 sudo mv /etc/xdg/menus /etc/xdg/menus.bak
