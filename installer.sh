@@ -4,7 +4,7 @@
 
 
 my_home="/home/leaf/"
-my_backup="/media/sf_Upload/arch_backup"
+my_backup="/media/sf_Upload/arch_backup/"
 #my_home="/home/pdq/test/"
 save_directory="save"
 dev_directory="Dev"
@@ -109,43 +109,37 @@ echo "${txtbld}Installing AUR packages${txtrst}"
 echo "${txtbld}Backing up and copying user configs${txtrst}"
       mv ${my_home}.gtkrc-2.0 ${my_home}.gtkrc-2.0.bak
       cp -p ${my_home}${dotfiles}.gtkrc-2.0 ${my_home}.gtkrc-2.0
-#      cp ${my_home}${dotfiles}.colors ${my_home}.colors
       mv ${my_home}.bashrc ${my_home}.bashrc.bak
       cp -p ${my_home}${dotfiles}.bashrc ${my_home}.bashrc
-#      mv ${my_home}.Xdefaults ${my_home}.Xdefaults.bak
-#      cp ${my_home}${dotfiles}.Xdefaults ${my_home}Xdefaults
       mv ${my_home}.Xresources ${my_home}.Xresources.bak
       cp -p ${my_home}${dotfiles}.Xresources ${my_home}.Xresources
       cp -p ${my_home}${dotfiles}.conkyrc ${my_home}.conkyrc
       cp -p ${my_home}${dotfiles}.xinitrc ${my_home}.xinitrc
+      cp -p ${my_home}${dotfiles}conky_clock.sh ${my_home}conky_clock.sh
       chmod +x /home/leaf/.xinitrc
-      cp -rp ${my_home}${dotfiles}.config ${my_home}.config
+      chmod +x /home/leaf/conky_clock.sh
+      cp -rp ${my_home}${dotfiles}.config/. ${my_home}.config/.
+      cp -rp ${my_home}${dotfiles}Desktop/. ${my_home}Desktop/.
       chmod +x /home/leaf/.config/openbox/pipemenus/*.sh
-      cp -rp ${my_home}${dotfiles}/conky ${my_home}/conky
-#      cp -r ${my_home}${dotfiles}awesome ${my_home}.config
-#      cp -r ${my_home}${dotfiles}.fonts ${my_home}.fonts
-#      cp -r ${my_home}${dotfiles}.icons ${my_home}.icons
-#      cp -r ${my_home}${dotfiles}.themes ${my_home}.themes
+      cp -rp ${my_home}${dotfiles}conky ${my_home}conky
       echo "
 mv ${my_home}.gtkrc-2.0 ${my_home}.gtkrc-2.0.bak
 cp -p ${my_home}${dotfiles}.gtkrc-2.0 ${my_home}.gtkrc-2.0
-cp -p ${my_home}${dotfiles}.colors ${my_home}.colors
 mv ${my_home}.bashrc ${my_home}.bashrc.bak
 cp -p ${my_home}${dotfiles}.bashrc ${my_home}.bashrc
-#mv ${my_home}.Xdefaults ${my_home}.Xdefaults.bak
-#cp ${my_home}${dotfiles}.Xdefaults ${my_home}.Xdefaults
 mv ${my_home}.Xresources ${my_home}.Xresources.bak
 cp -p ${my_home}${dotfiles}.Xresources ${my_home}.Xresources
 cp -p ${my_home}${dotfiles}.conkyrc ${my_home}.conkyrc
 cp -p ${my_home}${dotfiles}.xinitrc ${my_home}.xinitrc
+cp -p ${my_home}${dotfiles}conky_clock.sh ${my_home}conky_clock.sh
+chmod +x /home/leaf/.xinitrc
+chmod +x /home/leaf/conky_clock.sh
 cp -rp ${my_home}${dotfiles}.config/. ${my_home}.config/.
 chmod +x /home/leaf/.config/openbox/pipemenus/*.sh
-cp -rp ${my_home}${dotfiles}/conky ${my_home}/conky
-cp -rp ${my_home}${dotfiles}awesome ${my_home}.config
-cp -rp ${my_home}${dotfiles}.fonts ${my_home}.fonts
-cp -rp ${my_home}${dotfiles}.icons ${my_home}.icons
-cp -rp ${my_home}${dotfiles}.themes ${my_home}.themes"
-      cd ${my_home}
+cp -rp ${my_home}${dotfiles}conky ${my_home}conky
+cp -rp ${my_home}${dotfiles}Desktop/. ${my_home}Desktop/.
+"
+cd ${my_home}
       pwd
 ls -a
       choice=$choice_count
@@ -160,10 +154,11 @@ echo "${txtbld}Backing up and copying root configs${txtrst}"
       sudo cp -p ${my_home}${dotfiles}etc/pacman.conf /etc/pacman.conf
       sudo cp -p ${my_home}${dotfiles}etc/sudoers.d/g_wheel /etc/sudoers.d/g_wheel
       sudo chmod 440 /etc/sudoers.d/g_wheel
+      sudo chown root:root /etc/sudoers.d/g_wheel
       sudo mv /etc/slim.conf /etc/slim.conf.bak
       sudo cp -p ${my_home}${dotfiles}etc/slim.conf /etc/slim.conf
       sudo mv /etc/xdg/menus /etc/xdg/menus.bak
-      sudo cp -rp ${my_home}${dotfiles}etc/xdg/menus/. /etc/xdg/menus/.
+      sudo cp -rp ${my_home}${dotfiles}etc/xdg/menus/ /etc/xdg/menus/
       sudo cp -rp ${my_home}${dotfiles}usr/share/. /usr/share/.
       sudo mv /etc/oblogout.conf /etc/oblogout.conf.bak
       sudo cp -p ${my_home}${dotfiles}etc/oblogout.conf /etc/oblogout.conf
@@ -176,11 +171,12 @@ sudo mv /etc/pacman.conf /etc/pacman.conf.bak
 sudo cp -p ${my_home}${dotfiles}etc/pacman.conf /etc/pacman.conf
 sudo cp -p ${my_home}${dotfiles}etc/sudoers.d/g_wheel /etc/sudoers.d/g_wheel
 sudo chmod 440 /etc/sudoers.d/g_wheel
+sudo chown root:root /etc/sudoers.d/g_wheel
 sudo mv /etc/slim.conf /etc/slim.conf.bak
 sudo cp -p ${my_home}${dotfiles}etc/slim.conf /etc/slim.conf
 sudo mv /etc/xdg/menus /etc/xdg/menus.bak
-sudo cp -rp ${my_home}${dotfiles}etc/xdg/menus /etc/xdg/menus
-sudo cp -rp ${my_home}${dotfiles}usr/share /usr/share
+sudo cp -rp ${my_home}${dotfiles}etc/xdg/menus/ /etc/xdg/menus/
+sudo cp -rp ${my_home}${dotfiles}usr/share/. /usr/share/.
 sudo mv /etc/oblogout.conf /etc/oblogout.conf.bak
 sudo cp -p ${my_home}${dotfiles}etc/oblogout.conf /etc/oblogout.conf"
       cd /etc
