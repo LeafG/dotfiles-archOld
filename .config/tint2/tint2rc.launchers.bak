@@ -142,7 +142,5 @@ launcher_item_app = /usr/share/applications/seamonkey.desktop
 launcher_item_app = /usr/share/applications/htop.desktop
 launcher_item_app = /usr/share/applications/foobar2000.desktop
 launcher_item_app = /home/leaf/Desktop/conky_clock.desktop
-launcher_item_app = /home/leaf/Desktop/conky_cal_cairo.desktop
-launcher_item_app = /home/leaf/Desktop/EditPlus3.desktop
 
 # End of config

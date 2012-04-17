@@ -15,7 +15,7 @@ own_window_colour black
 minimum_size 1 1
 maximum_width 190
 
-alignment top_right
+alignment top_middle
 gap_x 30
 gap_y 12
 
