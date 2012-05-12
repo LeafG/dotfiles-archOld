@@ -107,6 +107,6 @@ lua_load ~/conky/clock.lua
 lua_draw_hook_post draw_clock
 
 TEXT
-${image /media/sf_Upload/conky-clock/pics/lars2.png -p -0,0 -s 220x220}
+${image /usr/share/icons/png/lars2.png -p -0,0 -s 220x220}
 #${image /media/sf_Upload/conky-clock/pics/Topaz_Circled2.png -p -0,0 -s 220x220}
 

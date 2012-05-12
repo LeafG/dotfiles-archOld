@@ -18,7 +18,7 @@ imlib_cache_size 0
 own_window yes
 own_window_type desktop
 own_window_transparent yes
-own_window_argb_visual yes
+#own_window_argb_visual yes
 #own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
 own_window_title calendar box
 #own_window_colour 004000
@@ -27,9 +27,9 @@ own_window_title calendar box
 border_inner_margin 0
 border_outer_margin 0
 
-minimum_size 250 250
+minimum_size 300 250
 
-alignment top_right
+alignment top_middle
 gap_x 20
 gap_y 20
 

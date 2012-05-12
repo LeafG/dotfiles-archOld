@@ -32,8 +32,8 @@ function conky_calendar_box()
 --		},
 	
 		{
-		x=10,		--x of top left corner, relative to conky window
-		y=10,		--y of top left corner, relative to conky window
+		x=1,		--x of top left corner, relative to conky window
+		y=1,		--y of top left corner, relative to conky window
 		font="Verdana",		--font to use
 		font_size=16,		--font size to use
 			
@@ -41,7 +41,7 @@ function conky_calendar_box()
 		days_number=3,		  --number of letters for days (monday ...), default = 1
 
 		days_position="t",		-- position of boxes "Days" (t/b) top or bottom, default=t
-		month_position="t",		-- position of box "Month" (t/b/l/r) top, bottom, left or right, default=t
+		month_position="l",		-- position of box "Month" (t/b/l/r) top, bottom, left or right, default=t
 		two_digits=false,		-- display numbers with two digits (true/false), default=false
 		alignment="c",			-- alignment of days numbers (c/r/l), default= c
 			
@@ -69,12 +69,12 @@ function conky_calendar_box()
 
 		colBox = {0x004000,0x404040,0.8,1,0x0000C0,0x000080,1,1}, --color of standard box
 		colBoxText  ={0x00FF00,0x00FFFF,1,1},    					--color of text numbers
-		colBoxTextOM = {0x808080,0xC0C0C0,1,1},   				--color of numbers for other month
+		colBoxTextOM = {0xFFFFFF,0xC0C0C0,1,1},   				--color of numbers for other month
 	
 		colDays = {0x004000,0xFFFFFF,0.8,1,0x0000C0,0x000080,1,1},    --color of boxes "Days" (Monday ...)
 		colDaysText  ={0xFFFF00,0xFFFF00,1,1},     				--color of days (Monday ...)
 	
-		colBoxTD  = {0xFFFFFF,0x00FF00,1,1,0xFF00FF,0x00FF00,1,1},  --color of box "Today"
+		colBoxTD  = {0xFFFFFF,0x00FF00,1,1,0x7F2000,0x7F2000,1,1},  --color of box "Today"
 		colBoxTextTD = {0x000000,0x000000,0.5,1},	   				--color of text "today"
 	
 		colBoxWE  = {0x7F2000,0x7F2000,1,1,0x0000C0,0x000080,1,1}, --color of box weekend days
@@ -83,15 +83,15 @@ function conky_calendar_box()
 		colBoxBH  = {0xFFFFFF,0xFF0000,1,1,0xFF00FF,0x00FF00,1,1}, --color of box "Bank holiday"
 		colBoxTextBH = {0x000000,0x000000,0.5,1},	   				--color of text holiday
 	
-		colMonth = {0x004000,0xFFFFFF,0.8,1,0x0000C0,0x000080,1,1},   --color of box "Month"
+		colMonth = {0x004000,0xFFFFFF,0.5,0.7,0x0000C0,0x000080,1,1},   --color of box "Month"
 		colMonthText  = {0xFFFF00,0xFFFF00,1,1},   					--color of text "Month"
 	
-		display_info_box=false,			--affiche la boite info (default=false)
+		display_info_box=true,			--affiche la boite info (default=false)
 		file_info="/tmp/info.txt",		--read first line of this file and display it box "info"
 										--if file not found, use calendar.txt
-		colInfo = {0xFF0000,0x0000FF,1,1,0x0000FF,0x00FFFF,0.5,0.5}, --color of box "info"
-		colInfoText = {0xFFFF00,0xFFFFFF,1,1},						--color of text "info"
-		info_position="b",   			--position of box info  (t/b/l/r) top, bottom, left or right, default=b
+		colInfo = {0xFFFFFF,0x00FFFF,0.6,0.7,0x0000C0,0x000080,1,1}, --color of box "info"
+		colInfoText = {0x004000,0xFFFFFF,1,1},						--color of text "info"
+		info_position="t",   			--position of box info  (t/b/l/r) top, bottom, left or right, default=b
 		display_empty_info_box=false,	--if no info to display , display or not info the box, default=false	
 		},
 
@@ -411,6 +411,8 @@ function draw_calendar(t)
 		end
 	end
 	
+	local txt_info=os.date("%H")..":"..os.date("%M")
+
 	if not t.display_empty_info_box and txt_info=="" then
 		t.display_info_box =false
 	end
