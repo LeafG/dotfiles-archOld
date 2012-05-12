@@ -23,16 +23,16 @@ function conky_calendar_box()
 
 	cal_settings={
 		{
-		x=10,		--x of top left corner, relative to conky window
-		y=10,		--y of top left corner, relative to conky window
+		x=1,		--x of top left corner, relative to conky window
+		y=1,		--y of top left corner, relative to conky window
 		font="Verdana",		--font to use
-		font_size=16,		--font size to use
+		font_size=14,		--font size to use
 			
 		month_format="%B %Y", --month format, see http://www.lua.org/pil/22.1.html for available formats, default="%B"
 		days_number=3,		  --number of letters for days (monday ...), default = 1
 
 		days_position="t",		-- position of boxes "Days" (t/b) top or bottom, default=t
-		month_position="t",		-- position of box "Month" (t/b/l/r) top, bottom, left or right, default=t
+		month_position="l",		-- position of box "Month" (t/b/l/r) top, bottom, left or right, default=t
 		two_digits=false,		-- display numbers with two digits (true/false), default=false
 		alignment="c",			-- alignment of days numbers (c/r/l), default= c
 			
@@ -40,8 +40,8 @@ function conky_calendar_box()
 		
 		display_others_days=true, --display days numbers of previous and next months, default=true
 		
-		hpadding=2,		--horizontal space beetween border and text, default=2 pixels
-		vpadding=2,		--vertical space beetween border and text, default=2 pixels
+		hpadding=5,		--horizontal space beetween border and text, default=2 pixels
+		vpadding=3,		--vertical space beetween border and text, default=2 pixels
 		border=1,		--border size, default=0 pixels
 		gap=5,			--space betwwen 2 boxes, default=2 pixels
 		radius=5,		--radius of corners, default=0 pixels
@@ -50,29 +50,29 @@ function conky_calendar_box()
 		--format for boxes  {color1, Alpha (transparency, between 0 and 1), border:  color, Alpha (transparency)}
 		--format for texts  {color1, Alpha (transparency)}
 
-		colBox = {0x004000,0.4,0xC0C0C0,0.5},                      --color of standard box
+		colBox = {0x004000,0.4,0xC0C0C0,0.8},                      --color of standard box
 		colBoxText  ={0xFFFFFF,1},    					--color of text numbers
 		colBoxTextOM = {0xC0C0C0,1},   				--color of numbers for other month
 	
 		colDays = {0x004000,1,0x000080,1},    --color of boxes "Days" (Monday ...)
 		colDaysText  ={0xFFFF00,1},     				--color of days (Monday ...)
 	
-		colBoxTD  = {0xFFFFFF,1,0xFF00FF,1},  --color of box "Today"
+		colBoxTD  = {0xC0C0C0,1,0x7F2000,1},  --color of box "Today"
 		colBoxTextTD = {0x000000,1},	   				--color of text "today"
 	
 		colBoxWE  = {0x7F2000,1,0x000080,1}, --color of box weekend days
 		colBoxTextWE = {0xFFFF00,1},	   				--color of text weekend days
 	
-		colMonth = {0x004000,1,0x000080,1},   --color of box "Month"
+		colMonth = {0x004000,1,0x00FF00,1},   --color of box "Month"
 		colMonthText  = {0xFFFF00,1},   					--color of text "Month"
 	
-		display_info_box=false,			--affiche la boite info (default=false)
+		display_info_box=true,			--affiche la boite info (default=false)
 		file_info="/tmp/info.txt",		--read first line of this file and display it box "info"
 										--if file not found, use calendar.txt
-		colInfo = {0xFF0000,1,0x0000FF,0.5}, --color of box "info"
+		colInfo = {0x004000,1,0x00FF00,1}, --color of box "info"
 		colInfoText = {0xFFFF00,1},						--color of text "info"
-		info_position="b",   			--position of box info  (t/b/l/r) top, bottom, left or right, default=b
-		display_empty_info_box=false,	--if no info to display , display or not info the box, default=false	
+		info_position="t",   			--position of box info  (t/b/l/r) top, bottom, left or right, default=b
+		display_empty_info_box=true,	--if no info to display , display or not info the box, default=false	
 		},
 
 	}
@@ -118,8 +118,9 @@ function rgb_to_r_g_b(colour,alpha)
 	return ((colour / 0x10000) % 0x100) / 255., ((colour / 0x100) % 0x100) / 255., (colour % 0x100) / 255., alpha
 end
 
+--[[
 function hex_to_rgb(color)
---[[  -- --------------------------------------------------------------------------
+  -- --------------------------------------------------------------------------
     http://gristle.tripod.com/hexconv.html#hex-rgb
     The formula from RGB to Hex and vice versa:
     for RGB to hex divide each vlue by 16. 
@@ -142,8 +143,8 @@ function hex_to_rgb(color)
    RGB = 182, 0, 35
    RGB in the Cairo functions is a number between 0 - 1, so, the R, G, B need to be divided by 255
   -- --------------------------------------------------------------------------
-]]
-        local c1 = string.format ("%6x",color)
+
+	local c1 = string.format ("%6x",color)
 
 	local t = {} 
 
@@ -175,12 +176,15 @@ function hex_to_rgb(color)
 	return r1,g1,b1
 
 end
+]]
 
 function create_pattern(cr,x,y,w,h,tCol,radius)
 
 	local color1,alpha1=tCol[1],tCol[2]
-	local  r,g,b = hex_to_rgb(tCol[1])
-	print (" create_pattern, alpha, r,g,b and color1 are: ".. alpha1, r,g,b, color1)
+--	local  r,g,b = hex_to_rgb(tCol[1])
+	local  r,g,b = rgb_to_r_g_b(tCol[1],tCol[2])
+	
+--	print (" create_pattern, alpha, r,g,b and color1 are: ".. alpha1, r,g,b, color1)
 
         cairo_set_source_rgba (cr, r,g,b,alpha1) -- color and alpha
 
@@ -355,7 +359,9 @@ function draw_calendar(t)
     last_p_day=get_days_in_month(lpdtable.month,lpdtable.year)
    	mtable.month=lpdtable.month+1
    	mtable = os.date("*t",os.time(mtable))
-	
+
+	local txt_info=os.date("%H")..":"..os.date("%M")
+
 	--define text for days
 	tdays={}
 	for i=3,10 do
@@ -401,7 +407,8 @@ function draw_calendar(t)
 			local colorBox=t.colBox
 			if flagWE then
 				colorBox=t.colBoxWE
-			elseif dtable.day == d-first_day and t.month_offset==0 then
+			end
+			if dtable.day == d-first_day and t.month_offset==0 then
 				colorBox=t.colBoxTD
 			end
 			draw_frame (X,Y,maxSide,maxSide,colorBox,t.radius,t.border)
