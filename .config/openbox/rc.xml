@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <openbox_config xmlns="http://openbox.org/3.4/rc">
   <resistance>
     <strength>10</strength>
@@ -147,14 +148,14 @@
     <right>0</right>
   </margins>
   <dock>
-    <position>TopLeft</position>
+    <position>BottomRight</position>
     <!-- (Top|Bottom)(Left|Right|)|Top|Bottom|Left|Right|Floating -->
     <floatingX>0</floatingX>
     <floatingY>0</floatingY>
-    <noStrut>no</noStrut>
-    <stacking>Below</stacking>
+    <noStrut>yes</noStrut>
+    <stacking>Above</stacking>
     <!-- 'Above', 'Normal', or 'Below' -->
-    <direction>Vertical</direction>
+    <direction>Horizontal</direction>
     <!-- 'Vertical' or 'Horizontal' -->
     <autoHide>no</autoHide>
     <hideDelay>300</hideDelay>
@@ -403,7 +404,7 @@
         </startupnotify>
       </action>
     </keybind>
-    <keybind key="W-space">
+    <keybind key="C-A-space">
       <action name="ShowMenu">
         <menu>root-menu</menu>
       </action>

@@ -1,4 +1,5 @@
 alsa-utils
+archlinux-menus
 archlinux-themes-slim
 autoconf
 automake
@@ -23,11 +24,9 @@ make
 nitrogen
 notification-daemon
 obconf
-obkey-git
 oblogout
 obmenu
 openbox
-openbox-menu
 openbox-themes
 openssh
 patch
@@ -38,14 +37,16 @@ roxterm
 seamonkey
 slim
 slim-themes
+spacefm
 strace
 sudo
 thunar
 thunar-volman
-tint2-svn
 ttf-dejavu
 virtualbox-archlinux-additions
 virtualbox-archlinux-modules
+wmctrl
+xdotool
 xf86-video-ati
 xf86-video-vesa
 xorg-server
@@ -55,4 +56,4 @@ xorg-utils
 xorg-xclock
 xorg-xinit
 xterm
-yaourt
+xxkb

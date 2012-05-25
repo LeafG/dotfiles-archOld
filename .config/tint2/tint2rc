@@ -40,6 +40,7 @@ wm_menu = 0
 panel_layer = bottom
 panel_background_id = 3
 panel_items = LTSC
+#panel_items = LT
 
 # Panel Autohide
 autohide = 0
@@ -101,6 +102,16 @@ clock_tooltip =
 clock_padding = 0 0
 clock_background_id = 0
 
+clock_lclick_command = showLangInd.sh
+clock_rclick_command = zenity --calendar --text ""
+clock_tooltip = %A %0d %B %Y %nWeek %W
+#time1_timezone = :Asia/Jerusalem
+#time2_timezone = :Europe/Berlin
+#clock_tooltip_timezone = :/usr/share/zoneinfo/Asia/Jerusalem
+
+
+
+
 # Tooltips
 tooltip = 0
 tooltip_padding = 0 0
@@ -127,13 +138,28 @@ battery_font_color = #FFFFFF 100
 battery_padding = 0 0
 battery_background_id = 0
 
+#---------------------------------------------
+# TOOLTIP
+#---------------------------------------------
+tooltip = 1
+tooltip_padding = 2 2
+tooltip_show_timeout = 0.3
+tooltip_hide_timeout = 0.1
+tooltip_background_id = 9
+tooltip_font_color = #ffffcc 100
+tooltip_font = Sans 8
+
+
 #Launchers
 #launcher_icon_theme = LinuxLex-8
 launcher_icon_theme = Gnome
 launcher_margin = 1 1
 launcher_padding = 5 1 5
 launcher_background_id = 0
-launcher_icon_size = 16
+launcher_icon_size = 48
+launcher_item_app = /home/leaf/Desktop/tint.desktop
+launcher_item_app = /home/leaf/Desktop/spacer.desktop
+#launcher_icon_size = 16
 #launcher_item_app = /usr/share/applications/icechat9.desktop
 #launcher_item_app = /usr/share/applications/editplus.desktop
 #launcher_item_app = /usr/share/applications/poppeeper.desktop

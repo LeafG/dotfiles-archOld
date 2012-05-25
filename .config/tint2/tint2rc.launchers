@@ -40,6 +40,7 @@ wm_menu = 0
 panel_layer = bottom
 panel_background_id = 3
 panel_items = LTSC
+#panel_items = LT
 
 # Panel Autohide
 autohide = 0
@@ -134,6 +135,7 @@ launcher_margin = 1 1
 launcher_padding = 5 1 5
 launcher_background_id = 0
 launcher_icon_size = 16
+launcher_item_app = /home/leaf/Desktop/tint2.desktop
 #launcher_item_app = /usr/share/applications/icechat9.desktop
 #launcher_item_app = /usr/share/applications/editplus.desktop
 #launcher_item_app = /usr/share/applications/poppeeper.desktop
