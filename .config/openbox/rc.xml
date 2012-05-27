@@ -1,4 +1,3 @@
-<?xml version="1.0"?>
 <openbox_config xmlns="http://openbox.org/3.4/rc">
   <resistance>
     <strength>10</strength>
@@ -251,6 +250,15 @@
         </startupnotify>
       </action>
     </keybind>
+    <keybind key="C-1">
+      <action name="Execute">
+        <command>/home/leaf/conky/conkyLangReload.sh</command>
+        <startupnotify>
+          <enabled>yes</enabled>
+          <name>showKBIndicator</name>
+        </startupnotify>
+      </action>
+    </keybind>
     <keybind key="A-F3">
       <action name="Execute">
         <command>~/.config/dmenu/dmenu-bind.sh</command>
@@ -312,7 +320,7 @@
     </keybind>
     <keybind key="W-w">
       <action name="Execute">
-        <command>seamonkey </command>
+        <command>seamonkey</command>
         <startupnotify>
           <enabled>yes</enabled>
           <name>Minefield Web Browser</name>

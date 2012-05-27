@@ -3,13 +3,7 @@ tint2 &
 xfce4-power-manager &
 volumeicon -b &
 nitrogen --restore &
-#stalonetray &
-#stalonetray --dockapp-mode simple &
 xxkb &
-#status() {
-    echo -n label $(xkblayout-state print "%s") '|' $(date +"%a %b %d %H:%M")
-#}
-
 
 #xcompmgr &
 #xbacklight -set 100 &
